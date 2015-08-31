@@ -17,7 +17,7 @@ import java.util.Random;
 public class Main extends SimpleApplication {
 
     Generator generator;
-    int roomNum = 1200;
+    int roomNum = 120;
     int minSize = 2;
     int maxSize = 10;
     
