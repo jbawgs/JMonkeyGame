@@ -60,7 +60,7 @@ public class Generator {
     public void sortRects() {
 
         int count = 0;
-        while (count < roomNum) {
+        while (count <= roomNum) {
             for (Rectangle r1 : rects) {
                 Vector2f startPos = r1.pos;
                 for (Rectangle r2 : rects) {
