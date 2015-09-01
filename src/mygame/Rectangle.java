@@ -25,21 +25,29 @@ public class Rectangle {
     public float right;
     public float top;
     public float bottom;
+    public Vector2f or;
+    public Vector2f tr;
     
     public Rectangle(int width, int height, Vector2f pos, int id){
         this.width = width;
         this.height = height;
         this.pos = pos;
         this.left = pos.x - (width/2);
+        this.or = new Vector2f(pos.x-(width/2), pos.y - (height/2));
+        this.tr = new Vector2f(pos.x+(width/2), pos.y+(height/2));
         this.right = pos.x + (width/2);
         this.top = pos.y + (height/2);
         this.bottom = pos.y - (height/2);
         this.id = id;
     }
     
+    public Rectangle(){
+        
+    }
+    
     public boolean intersects(Rectangle rect) {
         //System.out.println("INTERSECTED ID: " + this.id + " " + this.pos + " ID " + rect.id + " " + rect.pos);
-        return (Math.abs(this.pos.x - rect.pos.x) * 1 < (this.width + rect.width))
-                && (Math.abs(this.pos.y - rect.pos.y) * 1 < (this.height + rect.height));
+        return (Math.abs(this.pos.x - rect.pos.x) * .8 < (this.width + rect.width))
+                && (Math.abs(this.pos.y - rect.pos.y) * .8 < (this.height + rect.height));
     }
 }
