@@ -17,9 +17,9 @@ import java.util.Random;
 public class Main extends SimpleApplication {
 
     Generator generator;
-    int roomNum = 120;
-    int minSize = 2;
-    int maxSize = 10;
+    int roomNum = 100;
+    int minSize = 4;
+    int maxSize = 20;
     
     public static void main(String[] args) {
         Main app = new Main();
@@ -44,39 +44,8 @@ public class Main extends SimpleApplication {
             Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");  // create a simple material
             mat.setColor("Color", ColorRGBA.randomColor());   // set color of material to blue
             geom.setMaterial(mat);                   // set the cube's material
-            geom.setLocalTranslation(r.pos.x, r.pos.y, -80f);
+            geom.setLocalTranslation(r.pos.x, r.pos.y, -180f);
             rootNode.attachChild(geom);            
         }        
-    }
-    public void sortBoxes() {
-//        int count = 0;
-//        while (count < roomNum) {
-//            for (Geometry b1 : boxes) {
-//                for (Geometry b2 : boxes) {
-//                    Vector2f startPos = new Vector2f(b1.getLocalTranslation().x, b1.getLocalTranslation().y);
-//                    Vector2f b1Pos = new Vector2f(b1.getLocalTranslation().x, b1.getLocalTranslation().y);
-//                    Vector2f b2Pos = new Vector2f(b2.getLocalTranslation().x, b2.getLocalTranslation().y);
-//                    Vector2f direction = new Vector2f();
-//                    if (rectCollide(b1, b2) && b1 != b2) {
-//
-//                        direction = b1Pos.subtract(b2Pos);
-//                        direction.normalizeLocal();
-//                        System.out.println("BOX INTERSECT " + b1.getLocalTranslation() + " " + b2.getLocalTranslation());
-//                        b1Pos = b1Pos.add(direction);
-//                        b1.setLocalTranslation(b1Pos.x, b1Pos.y, -60);
-//
-//                    }
-//                    System.out.println(count);
-//                    if (b1Pos.equals(startPos)) {
-//                        ++count;
-//                        System.out.println("PLUS");
-//                    } else {
-//                        System.out.println("Start: " + startPos + " Current " + b1Pos);
-//                        count = count - roomNum;
-//                    }
-//                }
-//            }
-//        }
-//        sorted = true;
     }
 }
